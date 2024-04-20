@@ -1,6 +1,6 @@
-import chalk from "chalk";
-import fs from "fs";
-import { Color, Carta } from "./carta.js";
+import chalk from 'chalk';
+import fs from 'fs';
+import { Color, Carta } from './carta.js';
 
 /*
 Desarrolle el siguiente ejercicio en el repositorio de su práctica.
@@ -37,19 +37,17 @@ export class Usuario {
    * @param carta
    * @returns devuelve una promesa
    */
- public agregarCarta(carta: Carta): Promise<void> {
+  public agregarCarta(carta: Carta): Promise<void> {
     return new Promise<void>((resolve, reject) => {
       this.cargarColeccion()
         .then(() => {
           const cartaExistente = this.coleccion.find((c) => c.id === carta.id);
           if (cartaExistente) {
-            const errorExistente = new Error(
-              "¡Error! Ya existe una carta con ese ID en la colección."
-            );
+            const errorExistente = new Error('¡Error! Ya existe una carta con ese ID en la colección.');
             reject(errorExistente);
           } else {
             this.coleccion.push(carta);
-            console.log(chalk.green("¡Carta añadida a la colección con éxito!"));
+            console.log(chalk.green('¡Carta añadida a la colección con éxito!'));
             this.guardarColeccion()
               .then(() => resolve())
               .catch((error) => reject(error));
@@ -59,24 +57,22 @@ export class Usuario {
     });
   }
 
-   /**
+  /**
    * @brief Método que elimina una carta de la colección del usuario.
    * @param id
    * @returns devuelve una promesa
    */
-   public eliminarCarta(id: number): Promise<void> {
+  public eliminarCarta(id: number): Promise<void> {
     return new Promise<void>((resolve, reject) => {
       this.cargarColeccion()
         .then(() => {
           const index = this.coleccion.findIndex((c) => c.id === id);
           if (index === -1) {
-            const errorNoEncontrada = new Error(
-              "¡Error! No se encontró ninguna carta con ese ID en la colección."
-            );
+            const errorNoEncontrada = new Error('¡Error! No se encontró ninguna carta con ese ID en la colección.');
             reject(errorNoEncontrada);
           } else {
             this.coleccion.splice(index, 1);
-            console.log(chalk.green("¡Carta eliminada con éxito!"));
+            console.log(chalk.green('¡Carta eliminada con éxito!'));
             this.guardarColeccion()
               .then(() => resolve())
               .catch((error) => reject(error));
@@ -85,7 +81,6 @@ export class Usuario {
         .catch((error) => reject(error));
     });
   }
-
 
   /**
    * @brief Método que modifica una carta de la colección del usuario.
@@ -124,9 +119,6 @@ export class Usuario {
     });
   }
   */
-
- 
-
 
   /**
    * @brief Método que lista todas las cartas de la colección del usuario.
@@ -231,17 +223,13 @@ export class Usuario {
   private guardarColeccion(): Promise<void> {
     return new Promise<void>((resolve, reject) => {
       const rutaArchivo = `./src/magic/${this.nombre}_coleccion.json`;
-      fs.writeFile(
-        rutaArchivo,
-        JSON.stringify(this.coleccion, null, 2),
-        (error) => {
-          if (error) {
-            reject(error);
-          } else {
-            resolve();
-          }
+      fs.writeFile(rutaArchivo, JSON.stringify(this.coleccion, null, 2), (error) => {
+        if (error) {
+          reject(error);
+        } else {
+          resolve();
         }
-      );
+      });
     });
   }
 
@@ -249,11 +237,11 @@ export class Usuario {
    * @brief Método que carga la colección de cartas del usuario desde un archivo JSON.
    * @param callback
    */
-  
+
   private cargarColeccion(): Promise<void> {
     return new Promise<void>((resolve, reject) => {
       const rutaArchivo = `./src/magic/${this.nombre}_coleccion.json`;
-      fs.readFile(rutaArchivo, "utf-8", (error, data) => {
+      fs.readFile(rutaArchivo, 'utf-8', (error, data) => {
         if (error) {
           if (error.code === 'ENOENT') {
             // El archivo no existe, por lo tanto, la colección está vacía
@@ -270,7 +258,6 @@ export class Usuario {
     });
   }
 }
-
 
 /*
 import { Carta, Color } from './carta';

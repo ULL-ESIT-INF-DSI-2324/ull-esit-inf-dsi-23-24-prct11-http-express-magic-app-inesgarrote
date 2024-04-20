@@ -90,4 +90,95 @@ export class Carta implements CartaIntertaz {
       this.marcasLealtad = marcasLealtad;
     }
   }
+
+  /**
+   * @brief devuelve el id de la carta
+   */
+  public getId(): number {
+    return this.id;
+  }
+
+  /**
+   * @brief devuelve el nombre de la carta
+   */
+  public getNombre(): string {
+    return this.nombre;
+  }
+
+  /**
+   * @brief devuelve el coste de maná de la carta
+   */
+  public getCosteMana(): number {
+    return this.costeMana;
+  }
+
+  /**
+   * @brief devuelve el color de la carta
+   */
+  public getColor(): Color {
+    return this.color;
+  }
+
+  /**
+   * @brief devuelve el tipo de la carta
+   */
+  public getTipo(): Tipo {
+    return this.tipo;
+  }
+
+  /**
+   * @brief devuelve la rareza de la carta
+   */
+  public getRareza(): Rareza {
+    return this.rareza;
+  }
+
+  /**
+   * @brief devuelve el texto de reglas de la carta
+   */
+  public getTextoReglas(): string {
+    return this.textoReglas;
+  }
+
+  /**
+   * @brief devuelve la fuerza y resistencia de la carta
+   */
+  public getFuerzaResistencia(): fuerzaResistencia {
+    return this.fuerzaResistencia;
+  }
+
+  /**
+   * @brief devuelve las marcas de lealtad de la carta
+   */
+  public getMarcasLealtad(): number | undefined {
+    return this.marcasLealtad;
+  }
+
+  /**
+   * @brief devuelve el valor de mercado de la carta
+   */
+  public getValorMercado(): number {
+    return this.valorMercado;
+  }
+}
+
+/**
+ * @brief convierte una carta de JSON a un objeto Carta
+ * @param card objeto JSON con los datos de la carta
+ * @returns objeto Carta
+ */
+export function JSONaCarta(card: any): Carta {
+  const cartaMagic = new Carta(
+    card.id,
+    card.nombre,
+    card.costeMana,
+    card.color,
+    card.tipo,
+    card.rareza,
+    card.textoReglas,
+    card.valor,
+    card.fuerzaResistencia,
+    card.marcasLealtad,
+  );
+  return cartaMagic;
 }

@@ -37,7 +37,7 @@ app.get('/cards', (req, res) => {
             res.send({ status: error ? 'Error' : 'Éxito', answer: error || result });
         });
     }
-    return; // Add return statement
+    return;
 });
 
 app.post('/cards', (req, res) => {
@@ -46,7 +46,7 @@ app.post('/cards', (req, res) => {
     manejadorCarta.agregarCarta(user as string, JSONaCarta(req.body), (error, result) => {
         res.send({ status: error ? 'Error' : 'Éxito', answer: error || result });
     });
-    return; // Add return statement
+    return;
 });
 
 app.delete('/cards', (req, res) => {
@@ -56,7 +56,7 @@ app.delete('/cards', (req, res) => {
     manejadorCarta.eliminarCarta(user as string, parseInt(id as string), (error, result) => {
         res.send({ status: error ? 'Error' : 'Éxito', answer: error || result });
     });
-    return; // Add return statement
+    return; 
 });
 
 app.patch('/cards', (req, res) => {
@@ -70,7 +70,7 @@ app.patch('/cards', (req, res) => {
     manejadorCarta.modificarCarta(user as string, JSONaCarta(req.body), (error, result) => {
         res.send({ status: error ? 'Error' : 'Éxito', answer: error || result });
     });
-    return; // Add return statement
+    return; 
 });
 
 const PORT = 3000;

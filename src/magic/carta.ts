@@ -141,6 +141,13 @@ export class Carta implements CartaIntertaz {
   }
 
   /**
+   * @brief devuelve el valor de mercado de la carta
+   */
+  public getValorMercado(): number {
+    return this.valorMercado;
+  }
+
+  /**
    * @brief devuelve la fuerza y resistencia de la carta
    */
   public getFuerzaResistencia(): fuerzaResistencia {
@@ -152,13 +159,6 @@ export class Carta implements CartaIntertaz {
    */
   public getMarcasLealtad(): number | undefined {
     return this.marcasLealtad;
-  }
-
-  /**
-   * @brief devuelve el valor de mercado de la carta
-   */
-  public getValorMercado(): number {
-    return this.valorMercado;
   }
 }
 
@@ -176,7 +176,7 @@ export function JSONaCarta(card: any): Carta {
     card.tipo,
     card.rareza,
     card.textoReglas,
-    card.valor,
+    card.valorMercado,
     card.fuerzaResistencia,
     card.marcasLealtad,
   );

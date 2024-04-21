@@ -1,0 +1,10 @@
+{
+  "id": 2,
+  "nombre": "nombre carta",
+  "costeMana": 3,
+  "color": "Azul",
+  "tipo": "Tierra",
+  "rareza": "Comun",
+  "textoReglas": "texto",
+  "valorMercado": 100
+}

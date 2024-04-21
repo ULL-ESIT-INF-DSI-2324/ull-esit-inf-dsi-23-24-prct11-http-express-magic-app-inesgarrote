@@ -3,7 +3,7 @@ import { ManejadorCartas } from './manejador_carta.js';
 import { JSONaCarta } from './carta.js';
 
 const manejadorCarta = ManejadorCartas.getInstance();
-const app = express();
+export const app = express();
 app.use(express.json());
 
 app.get('/cards', (req, res) => {

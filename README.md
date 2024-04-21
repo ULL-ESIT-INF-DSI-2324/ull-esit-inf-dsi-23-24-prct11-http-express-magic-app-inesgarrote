@@ -9,6 +9,8 @@ Enlace al repositorio de Github asociado a la práctica [ull-esit-inf-dsi-23-24-
 
 [![Coverage Status](https://coveralls.io/repos/github/ULL-ESIT-INF-DSI-2324/ull-esit-inf-dsi-23-24-prct11-http-express-magic-app-inesgarrote/badge.svg?branch=main)](https://coveralls.io/github/ULL-ESIT-INF-DSI-2324/ull-esit-inf-dsi-23-24-prct11-http-express-magic-app-inesgarrote?branch=main)
 
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=ULL-ESIT-INF-DSI-2324_ull-esit-inf-dsi-23-24-prct11-http-express-magic-app-inesgarrote&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=ULL-ESIT-INF-DSI-2324_ull-esit-inf-dsi-23-24-prct11-http-express-magic-app-inesgarrote)
+
 ## Introducción
 En esta práctica, se implementa una aplicación para coleccionistas de cartas Magic mediante un servidor HTTP escrito con Express. La aplicación permite realizar diversas operaciones sobre la colección de cartas de un usuario, como añadir, modificar, eliminar, listar y mostrar cartas.
 

@@ -112,7 +112,11 @@ export class ManejadorCartas {
   /**
    * Muestra una carta de la colección de un usuario.
    */
-  public mostrarCarta(usuario: string, cartaID: number, callback: (error: string | undefined, resultado: string | undefined) => void): void {
+  public mostrarCarta(
+    usuario: string,
+    cartaID: number,
+    callback: (error: string | undefined, resultado: string | undefined) => void,
+  ): void {
     const rutaArchivo = `./cartas/${usuario}/${cartaID}.json`;
 
     fs.stat(rutaArchivo, (err) => {
@@ -123,5 +127,5 @@ export class ManejadorCartas {
         callback(undefined, JSON.stringify(carta));
       });
     });
-  } 
+  }
 }
